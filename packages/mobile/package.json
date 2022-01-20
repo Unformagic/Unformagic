@@ -19,7 +19,7 @@
     "build:platform": "yarn build",
     "start": "lerna run start --scope @unformagic/doc --stream",
     "lint": "eslint --cache src/ --ext .ts,.tsx,.js,.mdx",
-    "test": "jest --config __tests__/jest.config.ts --watchAll",
+    "test": "jest --config __tests__/jest.config.ts --watchAll --passWithNoTests",
     "tsc": "tsc --skipLibCheck",
     "prepub": "yarn build",
     "pub": "npm publish",

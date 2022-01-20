@@ -20,7 +20,7 @@
     "build": "rollup -c ../../rollup.config.js",
     "build:core": "yarn build",
     "lint": "eslint --cache src/ --ext .ts,.tsx",
-    "test": "jest --config __tests__/jest.config.ts --watchAll",
+    "test": "jest --config __tests__/jest.config.ts --watchAll --passWithNoTests",
     "tsc": "tsc --skipLibCheck",
     "prepub": "yarn build",
     "pub": "npm publish",

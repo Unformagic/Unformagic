@@ -1,22 +1,16 @@
 module.exports = {
-  clearMocks: true,
   preset: 'ts-jest',
   testEnvironment: 'node',
+  clearMocks: true,
   testMatch: [
     '**/*/*.test.ts',
-    '**/*/*.test.tsx',
-    '**/*/*.spec.ts',
-    '**/*/*.spec.tsx',
-    '**/*/*.test.js',
-    '**/*/*.test.jsx',
-    '**/*/*.spec.js',
-    '**/*/*.spec.jsx',
+    '**/*/*.test.tsx'
   ],
   moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node'],
   cacheDirectory: '.jest/.cache',
   testPathIgnorePatterns: [
-    '<rootDir>/node_modules',
-    '<rootDir>/(?:.+?)/node_modules/'
+    '<rootDir>/../node_modules',
+    '<rootDir>/(?:.+?)/../node_modules/'
   ],
   transform: {
     '^.+\\.js$': 'babel-jest',
