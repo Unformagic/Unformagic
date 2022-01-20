@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "@unformagic/ts-config",
+  "version": "0.0.0",
+  "main": "tsconfig.json",
+  "license": "MIT",
+  "peerDependencies": {
+    "typescript": "^4.4.2"
+  },
+  "scripts": {
+    "pub": "npm publish",
+    "unpub": "npm unpublish @unformagic/ts-config --force",
+    "pub:local": "rimraf .npmrc && yarn pub --registry http://localhost:4873",
+    "unpub:local": "rimraf .npmrc && yarn unpub --registry http://localhost:4873",
+    "pub:npm": "rimraf .npmrc && yarn pub --registry https://registry.npmjs.org",
+    "unpub:npm": "rimraf .npmrc && yarn unpub --registry https://registry.npmjs.org"
+  }
+}

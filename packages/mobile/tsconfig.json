@@ -1,0 +1,11 @@
+{
+  "extends": "@unformagic/ts-config/tsconfig.reactcomponents.json",
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "__tests__/**/*.ts"
+  ],
+  "compilerOptions": {
+    "baseUrl": "./"
+  }
+}

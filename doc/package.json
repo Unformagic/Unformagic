@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "name": "@unformagic/doc",
+  "version": "0.0.0",
+  "author": "Guilherme Monte <gmonte@inf.ufsm.br>",
+  "description": "Design system documentation",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./scripts/copyHtml && docz dev",
+    "prebuild": "rimraf .docz",
+    "build": "node ./scripts/copyHtml && docz build",
+    "serve": "ws -d ./dist",
+    "lint": "eslint --cache . --ext .ts,.tsx,.js,.mdx"
+  },
+  "dependencies": {
+    "@unformagic/core": "^0.0.0",
+    "@unformagic/web": "^0.0.0",
+    "docz": "^2.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-native-web": "^0.17.1"
+  },
+  "devDependencies": {
+    "local-web-server": "^5.1.1"
+  },
+  "resolutions": {
+    "typescript": "^4.4.2"
+  }
+}

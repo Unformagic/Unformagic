@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "name": "@unformagic/jest-config",
+  "version": "0.0.0",
+  "main": "jest.config.js",
+  "types": "index.d.ts",
+  "license": "MIT",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.0",
+    "@types/jest": "26.0.24",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
+    "file-loader": "^6.2.0",
+    "jest": "^26.4.0",
+    "jest-resolve": "^24.9.0",
+    "jest-svg-transformer": "^1.0.0",
+    "react-test-renderer": "^17.0.2",
+    "ts-jest": "^26.5.6"
+  },
+  "scripts": {
+    "pub": "npm publish",
+    "unpub": "npm unpublish @unformagic/jest-config --force",
+    "pub:local": "rimraf .npmrc && yarn pub --registry http://localhost:4873",
+    "unpub:local": "rimraf .npmrc && yarn unpub --registry http://localhost:4873",
+    "pub:npm": "rimraf .npmrc && yarn pub --registry https://registry.npmjs.org",
+    "unpub:npm": "rimraf .npmrc && yarn unpub --registry https://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.9"
+  }
+}

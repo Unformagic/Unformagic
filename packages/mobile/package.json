@@ -1,0 +1,41 @@
+{
+  "name": "@unformagic/mobile",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "types/src/index.d.ts",
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "prebuild": "rimraf dist types",
+    "build": "rollup -c ../../rollup.config.js",
+    "build:platform": "yarn build",
+    "start": "lerna run start --scope @unformagic/doc --stream",
+    "lint": "eslint --cache src/ --ext .ts,.tsx,.js,.mdx",
+    "test": "jest --config __tests__/jest.config.ts --watchAll",
+    "tsc": "tsc --skipLibCheck",
+    "prepub": "yarn build",
+    "pub": "npm publish",
+    "unpub": "npm unpublish @unformagic/mobile --force",
+    "pub:local": "rimraf .npmrc && yarn pub --registry http://localhost:4873",
+    "unpub:local": "rimraf .npmrc && yarn unpub --registry http://localhost:4873",
+    "pub:npm": "rimraf .npmrc && yarn pub --registry https://registry.npmjs.org",
+    "unpub:npm": "rimraf .npmrc && yarn unpub --registry https://registry.npmjs.org"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "@unformagic/core": "^0.0.0"
+  },
+  "devDependencies": {
+    "@unformagic/eslint-config": "^0.0.0",
+    "@unformagic/jest-config": "^0.0.0",
+    "@unformagic/ts-config": "^0.0.0"
+  }
+}

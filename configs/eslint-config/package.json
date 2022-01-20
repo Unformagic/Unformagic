@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "name": "@unformagic/eslint-config",
+  "version": "0.0.0",
+  "main": ".eslintrc.js",
+  "license": "MIT",
+  "dependencies": {
+    "@react-native-community/eslint-config": "^3.0.1",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-react-app": "^3.0.8",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-hook-break-line": "^0.1.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-import-helpers": "^1.0.2",
+    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-mdx": "^1.15.0",
+    "eslint-plugin-modules-newline": "^0.0.6",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "prettier-eslint": "^13.0.0"
+  },
+  "scripts": {
+    "pub": "npm publish",
+    "unpub": "npm unpublish @unformagic/eslint-config --force",
+    "pub:local": "rimraf .npmrc && yarn pub --registry http://localhost:4873",
+    "unpub:local": "rimraf .npmrc && yarn unpub --registry http://localhost:4873",
+    "pub:npm": "rimraf .npmrc && yarn pub --registry https://registry.npmjs.org",
+    "unpub:npm": "rimraf .npmrc && yarn unpub --registry https://registry.npmjs.org"
+  }
+}

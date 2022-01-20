@@ -1,0 +1,14 @@
+{
+  "extends": "@unformagic/ts-config",
+  "include": [
+    ".",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "../../packages/**/*.ts",
+    "../../packages/**/*.tsx",
+  ],
+  "exclude": [
+    "node_modules",
+    "../../packages/**/node_modules"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "private": true,
+  "name": "unformagic",
+  "license": "MIT",
+  "author": "Guilherme Monte <gmonte@inf.ufsm.br>",
+  "description": "Form builder to React",
+  "workspaces": {
+    "packages": [
+      "configs/*",
+      "doc",
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "start": "lerna run start --scope @unformagic/doc --stream",
+    "build:doc": "lerna run build --scope @unformagic/doc --stream",
+    "serve": "lerna run serve --scope @unformagic/doc --stream",
+    "build:core": "lerna run --parallel build:core --no-private --stream",
+    "build:platform": "lerna run --parallel build:platform --no-private --stream",
+    "build:packages": "yarn build:core && yarn build:platform",
+    "lint": "lerna run --parallel --stream lint --",
+    "test": "lerna run --stream test -- --watchAll=false --colors --coverage",
+    "pre:release": "lerna version --no-commit-hooks --conventional-prerelease",
+    "release": "lerna version minor --no-commit-hooks",
+    "release:fix": "lerna version patch --no-commit-hooks",
+    "prepub": "yarn build:packages",
+    "pub": "lerna publish from-package",
+    "pub:local": "rimraf .npmrc && yarn pub --registry http://localhost:4873",
+    "unpub:local": "rimraf .npmrc && lerna run --parallel unpub:local",
+    "pub:npm": "rimraf .npmrc && yarn pub --registry https://registry.npmjs.org",
+    "unpub:npm": "rimraf .npmrc && lerna run --parallel unpub:npm",
+    "config:npm": "yarn config set registry https://registry.npmjs.org && npm config set access public",
+    "postinstall": "yarn config:npm",
+    "prepare": "husky install"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@jest/types": "^27.1.1",
+    "@types/react": "^17.0.24",
+    "@types/styled-components": "^5.1.14",
+    "commitizen": "^4.2.4",
+    "cz-lerna-changelog": "^2.0.3",
+    "husky": "^7.0.0",
+    "lerna": "^3.22.1",
+    "rollup": "2.38.0",
+    "rollup-plugin-babel": "4.4.0",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "rollup-plugin-terser": "7.0.2",
+    "rollup-plugin-typescript2": "0.29.0",
+    "rollup-plugin-url": "3.0.1",
+    "typescript": "^4.4.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
